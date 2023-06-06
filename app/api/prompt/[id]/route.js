@@ -49,7 +49,7 @@ export const PATCH = async (request, { params }) => {
 // DELETE
 
 export const DELETE = async (request, { params }) => {
-  const { prompt, tag } = await request.JSON();
+  const { prompt, tag } = await request.json();
 
   try {
     await connectToDB();

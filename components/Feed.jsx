@@ -41,7 +41,7 @@ const Feed = () => {
     const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
     return allPosts.filter(
       (item) =>
-        regex.test(item.creator.username) ||
+        regex.test(item.creator.email) ||
         regex.test(item.tag) ||
         regex.test(item.prompt)
     );
@@ -72,7 +72,7 @@ const Feed = () => {
       <form className="relative w-full flex-center">
         <input
           type="text"
-          placeholder="Search for a tag or a username"
+          placeholder="Search for a tag or email"
           value={searchText}
           onChange={handleSearchChange}
           required
